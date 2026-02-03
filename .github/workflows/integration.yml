@@ -17,3 +17,30 @@ jobs:
       - name: Check outputs and modified files
         run: |
           cat test/README.md
+
+      - name: Generate Profile Trophy
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          username: buluma
+          file: test/trophy.svg
+          theme: onestar
+          cols: -1
+          rows: 10
+          panel-size: 115
+          margin-width: 10
+          margin-height: 10
+          no-background: true
+          no-frame: true
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        with:
+          commit_message: Update Test README
+          branch: master
+          commit_user_name: readme-scribe 🤖
+          commit_user_email: actions@github.com
+          commit_author: readme-scribe 🤖 <actions@github.com>
+          skip_fetch: false
+          push_options: '--force'
