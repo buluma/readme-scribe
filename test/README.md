@@ -58,4 +58,4 @@ Welcome to my little world.
 
 
 ## Contribution graph
-<img alt="github-snake" src="https://github.com/buluma/readme-scribe/blob/png/github-contribution-grid-snake-dark.svg" width="100%"/>
+<img alt="github-snake" src="https://github.com/buluma/readme-scribe/blob/png/github-contribution-grid-snake.svg" width="100%"/>
