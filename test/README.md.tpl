@@ -19,4 +19,4 @@ Want your own awesome profile page? Check out [markscribe](https://github.com/mu
 
 #### 💬 Feedback
 
-Say Hello, I don't bite!
+Say Hello, Its allowed!
