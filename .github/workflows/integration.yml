@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
-        uses: muesli/readme-scribe@master
+        uses: buluma/readme-scribe@master
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
