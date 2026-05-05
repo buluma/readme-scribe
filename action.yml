@@ -19,7 +19,7 @@ outputs:
 
 runs:
   using: "docker"
-  image: "docker://buluma/markscribe"
+  image: "docker://ghcr.io/buluma/markscribe"
   args:
     - "-write"
     - ${{ inputs.writeTo }}
