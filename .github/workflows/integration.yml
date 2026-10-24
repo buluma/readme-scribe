@@ -36,6 +36,7 @@ jobs:
           no-frame: true
 
       - uses: stefanzweifel/git-auto-commit-action@v7
+        if: github.ref == 'refs/heads/master'
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
@@ -45,4 +46,3 @@ jobs:
           commit_user_email: actions@github.com
           commit_author: readme-scribe 🤖 <actions@github.com>
           skip_fetch: false
-          push_options: '--force'

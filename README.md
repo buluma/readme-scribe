@@ -71,3 +71,31 @@ the `master` branch. Make sure to adjust the input values `template` and
 ## Example output
 
 ![readme-scribe example output](https://github.com/muesli/readme-scribe/raw/master/assets/template_example.png)
+
+## Numbered contribution grid
+
+The `generate contribution grid` workflow renders a dark contribution calendar
+with daily counts, month/day labels, and a green intensity legend. It runs daily
+at 01:00 UTC and can also be run from **Actions → generate contribution grid →
+Run workflow**. Scheduled runs begin when the workflow is on the default branch.
+The implementation branch also generates the image when its generator changes.
+
+Generated files are published only to the separate `contribution-grid` branch;
+the snake workflow continues using its existing `png` output branch.
+
+```markdown
+![Contributions](https://raw.githubusercontent.com/buluma/readme-scribe/contribution-grid/contributions.svg)
+```
+
+The generator uses `MY_GITHUB_TOKEN` when configured, otherwise the workflow's
+built-in token. Counts reflect the contributions visible to that token. Publishing
+uses the built-in token with `contents: write` permission.
+
+To generate locally with Python 3 (no packages required):
+
+```sh
+GH_TOKEN="$(gh auth token)" python3 scripts/generate_contribution_grid.py --user buluma
+```
+
+For an offline render, pass `--input response.json` with a saved GitHub GraphQL
+response. The default output is `dist/contributions.svg`; use `--output` to change it.

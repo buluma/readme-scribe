@@ -1,0 +1,41 @@
+name: generate contribution grid
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - scripts/generate_contribution_grid.py
+      - .github/workflows/generate_contribution_grid.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-grid-output
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Generate numbered contribution grid
+        env:
+          GH_TOKEN: ${{ secrets.MY_GITHUB_TOKEN || github.token }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        run: python3 scripts/generate_contribution_grid.py
+      - name: Publish grid to its own branch
+        uses: crazy-max/ghaction-github-pages@v4.2.0
+        with:
+          target_branch: png
+          build_dir: dist
+          commit_message: Update contribution grid
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
