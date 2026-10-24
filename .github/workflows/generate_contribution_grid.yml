@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - master
-      - feat/contribution-grid
     paths:
       - scripts/generate_contribution_grid.py
       - .github/workflows/generate_contribution_grid.yml
@@ -25,6 +24,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
       - name: Generate numbered contribution grid
         env:
           GH_TOKEN: ${{ secrets.MY_GITHUB_TOKEN || github.token }}
@@ -33,7 +34,7 @@ jobs:
       - name: Publish grid to its own branch
         uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
-          target_branch: contribution-grid
+          target_branch: png
           build_dir: dist
           commit_message: Update contribution grid
         env:
