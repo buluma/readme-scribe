@@ -13,6 +13,10 @@ on:
     branches:
     - master
 
+concurrency:
+  group: png-branch-publish
+  cancel-in-progress: false
+
 jobs:
   generate:
     permissions: 
@@ -21,6 +25,14 @@ jobs:
     timeout-minutes: 5
     
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: png
+          path: png-output
+      - name: Preserve existing PNG branch files
+        run: |
+          mkdir -p dist
+          rsync -a --exclude='.git/' png-output/ dist/
       # generates a snake game from a github user (<github_user_name>) contributions graph, output a svg animation at <svg_out_path>
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
