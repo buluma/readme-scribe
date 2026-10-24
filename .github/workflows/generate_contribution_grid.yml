@@ -35,6 +35,6 @@ jobs:
         with:
           target_branch: contribution-grid
           build_dir: dist
-          commit_msg: Update contribution grid
+          commit_message: Update contribution grid
         env:
           GITHUB_TOKEN: ${{ github.token }}
