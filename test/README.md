@@ -17,7 +17,7 @@ Want your own awesome profile page? Check out [markscribe](https://github.com/mu
 
 #### 🔭 Latest releases I've contributed to
 
-- [buluma/sotto](https://github.com/buluma/sotto) ([v0.1.10-nightly.20261024.b514a51f1a19](https://github.com/buluma/sotto/releases/tag/v0.1.10-nightly.20261024.b514a51f1a19), today) - There are many voice transcription/dictation apps, but this one is mine.
+- [buluma/sotto](https://github.com/buluma/sotto) ([v0.1.10-nightly.20261024.9a34b8358af4](https://github.com/buluma/sotto/releases/tag/v0.1.10-nightly.20261024.9a34b8358af4), today) - There are many voice transcription/dictation apps, but this one is mine.
 - [buluma/reddie](https://github.com/buluma/reddie) ([v1.7.2](https://github.com/buluma/reddie/releases/tag/v1.7.2), 3 days ago) - A desktop Kanban board for Redmine. No server, no backend — just Redmine plus this app.
 - [rmyndharis/OpenWA](https://github.com/rmyndharis/OpenWA) ([v0.25.0](https://github.com/rmyndharis/OpenWA/releases/tag/v0.25.0), 1 week ago) - Free, Open Source, Self-Hosted WhatsApp API Gateway
 - [buluma/Redmine-desktop](https://github.com/buluma/Redmine-desktop) ([v2.4.8](https://github.com/buluma/Redmine-desktop/releases/tag/v2.4.8), 1 week ago) - A powerful, high-performance, and beautiful cross-platform Redmine client built with Electron, React, and Vite.
